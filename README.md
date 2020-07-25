@@ -1,6 +1,5 @@
 # HobbyHacksSubmission
 
-
 Make sure you have Python 3.7, Flask installed:
 
 pip install Flask
