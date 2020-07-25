@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Header } from './components/Header'
-import { Users } from './components/Users'
-import { DisplayBoard } from './components/DisplayBoard'
-import CreateUser from './components/CreateUser'
-import { getAllUsers, createUser } from './services/UserService'
+import { Header } from './components/Header';
+import { getAllUsers, createUser } from './services/UserService';
+import { Map } from './components/Map';
+import { FindHotspots } from './components/FindHotspots';
 
 class App extends Component {
 
@@ -50,25 +49,17 @@ class App extends Component {
         <Header></Header>
         <div className="container mrgnbtm">
           <div className="row">
-            <div className="col-md-8">
-                <CreateUser 
-                  user={this.state.user}
-                  onChangeForm={this.onChangeForm}
-                  createUser={this.createUser}
-                  >
-                </CreateUser>
-            </div>
-            <div className="col-md-4">
-                <DisplayBoard
-                  numberOfUsers={this.state.numberOfUsers}
-                  getAllUsers={this.getAllUsers}
-                >
-                </DisplayBoard>
+            <div className="col-md-12">
+              <Map></Map>
             </div>
           </div>
-        </div>
-        <div className="row mrgnbtm">
-          <Users users={this.state.users}></Users>
+          <div className="row">
+            <div className="col-md-4"></div>
+            <div className="col-md-4">
+              <FindHotspots></FindHotspots>
+            </div>
+            <div className="col-md-4"></div>
+          </div>
         </div>
       </div>
     );
