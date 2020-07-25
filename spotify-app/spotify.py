@@ -19,7 +19,7 @@ def login():
     if token_info and not sp_oauth.is_token_expired(token_info):
         access_token = token_info['access_token']
         session['access_token'] = access_token
-        return redirect(url_for('spotify.top_tracks'))
+        return redirect(url_for('spotify.home_page'))
     else:
         login_url = sp_oauth.get_authorize_url()
         return redirect(login_url)
@@ -31,11 +31,11 @@ def set_token():
     token_info = sp_oauth.get_access_token(code)
     access_token = token_info['access_token']
     session['access_token'] = access_token
-    return redirect(url_for('spotify.home'))
+    return redirect(url_for('spotify.home_page'))
 
 # Get all of your top tracks and your currently playing song
 @bp.route('/home', methods=['GET'])
-def top_tracks():
+def home_page():
     access_token = session['access_token']
     sp_api = spotipy.Spotify(access_token)
     top_tracks_result = sp_api.current_user_top_tracks()
@@ -66,4 +66,4 @@ def add_to_queue(track_id):
     access_token = session['access_token']
     sp_api = spotipy.Spotify(access_token)
     sp_api.add_to_queue(track_id)
-    return redirect(url_for('spotify.home'))
+    return redirect(url_for('spotify.home_page'))
