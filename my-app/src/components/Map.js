@@ -4,8 +4,8 @@ export const Map = () => {
     return(
         <div className="map">
             <iframe
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw
-                &q=Current%20Location" allowfullscreen>
+                id='mapObj'
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=Current%20Location" allowfullscreen>
             </iframe>
         </div>
     )

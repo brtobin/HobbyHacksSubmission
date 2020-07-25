@@ -9,9 +9,7 @@ import { FindHotspots } from './components/FindHotspots';
 class App extends Component {
 
   state = {
-    user: {},
-    users: [],
-    numberOfUsers: 0
+    locToShow: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=Current%20Location"
   }
 
   createUser = (e) => {
@@ -19,14 +17,6 @@ class App extends Component {
         .then(response => {
           console.log(response);
           this.setState({numberOfUsers: this.state.numberOfUsers + 1})
-      });
-  }
-
-  getAllUsers = () => {
-    getAllUsers()
-      .then(users => {
-        console.log(users)
-        this.setState({users: users, numberOfUsers: users.length})
       });
   }
 
@@ -42,6 +32,7 @@ class App extends Component {
       this.setState({user})
   }
 
+
   render() {
     
     return (
@@ -50,13 +41,16 @@ class App extends Component {
         <div className="container mrgnbtm">
           <div className="row">
             <div className="col-md-12">
-              <Map></Map>
+              <Map>
+              </Map>
             </div>
           </div>
           <div className="row">
             <div className="col-md-4"></div>
             <div className="col-md-4">
-              <FindHotspots></FindHotspots>
+              <FindHotspots>
+  
+              </FindHotspots>
             </div>
             <div className="col-md-4"></div>
           </div>
