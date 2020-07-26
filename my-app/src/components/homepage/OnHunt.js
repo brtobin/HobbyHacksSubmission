@@ -1,10 +1,13 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-export const OnHunt = () => {
+export const OnHunt = props => {
     return(
         <div>
-            <h2 class="text-white">On the Hunt</h2>
-            <img class="snapshot" src="{{current_playing.image}}"/>
+            <Link>
+                <button type="button" class="btn btn-success" >On the Hunt</button>
+            </Link>
+            <img class="snapshot" src={props.item.album.images[0].url}/>
             <h4 class="text-white">      
             </h4>
         </div>   

@@ -95,26 +95,40 @@ class Home extends Component {
   render() {
     return (
       <div className="HomePage">
-        <div className="container mrgnbtm">
+        <div className="container-fluid">
           <div className="row mx-auto">
             <div className="col-md-12">
               <Header></Header>
             </div>
           </div>
         </div>
-        <div className="container">
+        <div className="middle-content">
           <div class="row">
-            <div class="col">
-              <OnRoad></OnRoad>
+            <div class="col-4">
+              {this.state.token && !this.state.no_data && (
+                <OnRoad
+                  item={this.state.item}
+                />
+              )}
+              {!this.state.token && (<div></div>)}
             </div>
-            <div class="col">
-              <OnHunt></OnHunt>
+            <div className="col-4">
+              {!this.state.token && (
+                <button type="button" class="btn btn-success"><a className="btn btn--loginApp-link"
+                href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>Login to Spotify</a></button>
+              )}
+              {this.state.token && (
+                <div></div>
+              )}
             </div>
-          </div>
-          <div class="row">
-          {!this.state.token && (
-            <a className="btn btn--loginApp-link"
-             href={`${authEndpoint}?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scopes.join("%20")}&response_type=token&show_dialog=true`}>Login to Spotify</a>)}
+            <div class="col-4">
+            {this.state.token && !this.state.no_data && (
+                <OnHunt
+                  item={this.state.item}
+                />
+              )}
+              {!this.state.token && (<div></div>)}
+            </div>
           </div>
         </div>
       </div>     

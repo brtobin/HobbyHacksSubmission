@@ -1,10 +1,13 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-export const OnRoad = () => {
+export const OnRoad = props => {
     return(
         <div>
-            <h2 class="text-white">On the Road</h2>
-            <img id="onroad" src="{{current_playing.image}}"/>
+            <Link to="./drive">
+                <button type="button" class="btn btn-success" >On the Road</button>
+            </Link>
+            <img id="onroad" src={props.item.album.images[0].url}/>
             <h4 class="text-white">
             </h4>
         </div>   
