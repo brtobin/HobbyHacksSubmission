@@ -5,7 +5,7 @@ export const Map = () => {
         <div className="map">
             <iframe
                 id='mapObj'
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=Current%20Location" allowfullscreen>
+                src="https://www.google.com/maps/embed/v1/place?key=<YOUR API KEY>&q=Current%20Location" allowfullscreen>
             </iframe>
         </div>
     )
