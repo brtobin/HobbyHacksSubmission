@@ -9,7 +9,7 @@ export const OnHunt = props => {
             }}>
                 <button type="button" class="btn btn-success" >On the Hunt</button>
             </Link>
-            <img class="snapshot" src={props.item.album.images[0].url}/>
+            <img class="snapshot" src={props.item}/>
             <h4 class="text-white">      
             </h4>
         </div>   

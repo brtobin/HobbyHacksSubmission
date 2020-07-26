@@ -7,6 +7,7 @@ import { Form } from './components/Form'
 import { CheckIn } from './components/CheckIn';
 import {HotspotTitle} from './components/huntpage/HotspotTitle';
 import * as $ from "jquery";
+import {Other} from "./components/huntpage/Other";
 
 class HuntPage extends Component {
 
@@ -98,6 +99,9 @@ loadHotspot = () => {
             <HotspotTitle
               currentHotspot = {this.state.currentHotspot}
             ></HotspotTitle>
+          </div>
+          <div className="actions">
+            <Other></Other>
           </div>
         </div>
       </div>     

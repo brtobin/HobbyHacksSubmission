@@ -15,17 +15,9 @@ class Home extends Component {
     super();
     this.state = {
       token: null,
-      item: {
-        album: {
-          images: [{ url: "" }]
-        },
-        name: "",
-        artists: [{ name: "" }],
-        duration_ms: 0
-      },
-      is_playing: "Paused",
-      progress_ms: 0,
-      no_data: false,
+      item: {},
+      item2: {},
+      no_data: false
     };
 
     this.getCurrentlyPlaying = this.getCurrentlyPlaying.bind(this);
@@ -41,7 +33,7 @@ class Home extends Component {
       this.setState({
         token: _token
       });
-      this.getCurrentlyPlaying(_token);
+      this.getSongFromPlaylist(_token);
     }
 
     // set interval for polling every 5 seconds
@@ -93,6 +85,39 @@ class Home extends Component {
     });
   }
 
+  getLibraryIndex() {
+    var index = Math.floor(Math.random() * 20);
+    return index;
+  }
+
+  getSongFromPlaylist(token) {
+    $.ajax({
+      url: "https://api.spotify.com/v1/me/tracks",
+      type: "GET",
+      beforeSend: xhr => {
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+      },
+      success: data => {
+  
+        // Checks if the data is not empty
+        if(!data) {
+          this.setState({
+            no_data: true,
+          });
+  
+          return;
+        }
+        var index = this.getLibraryIndex();
+
+        this.setState({item: data.items[index].track.album.images[0].url});
+
+        var index2 = this.getLibraryIndex();
+
+        this.setState({item2: data.items[index2].track.album.images[0].url});
+      }
+    });
+  }
+
   render() {
     return (
       <div className="HomePage">
@@ -125,7 +150,7 @@ class Home extends Component {
             <div class="col-4">
             {this.state.token && !this.state.no_data && (
                 <OnHunt
-                  item={this.state.item}
+                  item={this.state.item2}
                   token={this.state.token}
                 />
               )}
