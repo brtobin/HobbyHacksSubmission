@@ -7,7 +7,7 @@ export const OnRoad = props => {
             <Link to="./drive">
                 <button type="button" class="btn btn-success" >On the Road</button>
             </Link>
-            <img id="onroad" src={props.item.album.images[0].url}/>
+            <img class="snapshot" src={props.item}/>
             <h4 class="text-white">
             </h4>
         </div>   
