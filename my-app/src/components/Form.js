@@ -1,19 +1,12 @@
 import React from 'react'
 import Other from './Other'
+import Other2 from './Other2'
 
 export const Form = () => {
     return(
-        <form class="form-signin">
-            <div class="checkbox mb-3"></div>
-            <button class="btn btn-lg btn-primary btn-block default-primary-color" type="button">Random</button>
-            <button class="btn btn-lg btn-primary btn-block default-primary-color" type="button">Curated</button>
-            <div class="dropdown">
+        <div class="accordion" id="accordionExample">
                 <Other></Other>
-            </div>
-
-        </form>
+                <Other2></Other2>
+        </div>
     )
 }
-
-
-

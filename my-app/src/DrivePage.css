@@ -14,6 +14,10 @@ body {
   text-align: center;
 }
 
+#accordionExample{
+  background-color: #00FF00;
+}
+
 .middle-content {
   width: 100%;
 }
@@ -112,7 +116,7 @@ body {
 }
 
 .form-check-label {
-  color: white;
+  color: black;;
 }
 
 .col-sm-2 .pick-genre {
