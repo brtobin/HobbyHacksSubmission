@@ -15,6 +15,10 @@ header {
     margin-top: 2%;
 }
 
+#buttons {
+    height: 20%;
+    margin-top: 2%;
+}
 #onroad {
     width: 400px;
     height: 400px;

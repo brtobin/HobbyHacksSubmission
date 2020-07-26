@@ -4,6 +4,7 @@ import React from "react";
 
    import Home from "./Home"
    import DrivePage from "./DrivePage";
+   import HuntPage from "./HuntPage";
    
     const rootElement = document.getElementById("root");
     ReactDOM.render(
@@ -11,6 +12,7 @@ import React from "react";
        <Switch>
         <Route exact path="/" component={Home} id="HomePath"></Route>
         <Route exact path="/drive" component={DrivePage}></Route>
+        <Route exact path="/hunt" component={HuntPage}></Route>
       </Switch>
       </BrowserRouter>,
       rootElement
