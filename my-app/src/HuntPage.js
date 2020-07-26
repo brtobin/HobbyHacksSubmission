@@ -18,9 +18,9 @@ class HuntPage extends Component {
       token: props.token
     }
 
-    var grandCentralSP = {placename: "Grand Central Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJZwW4XcmsB4gRYJF5spqwliQ", lib: [{song: "Hello", artist: "Adele"}]
+    var grandCentralSP = {placename: "Grand Central Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=<YOUR API KEY>&q=place_id:ChIJZwW4XcmsB4gRYJF5spqwliQ", lib: [{song: "Hello", artist: "Adele"}]
     };
-    var wiCapitalSP = {placename: "Wisconsin Capital Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJ5YH4falWBogR5Lpub1B0OVA", lib: [{song: "Don't Stop Believin'", artist: "Journey"}]
+    var wiCapitalSP = {placename: "Wisconsin Capital Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=<YOUR API KEY>&q=place_id:ChIJ5YH4falWBogR5Lpub1B0OVA", lib: [{song: "Don't Stop Believin'", artist: "Journey"}]
     };
     this.hotspots = [grandCentralSP, wiCapitalSP];
   }
