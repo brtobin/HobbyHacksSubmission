@@ -5,12 +5,11 @@ import React from "react";
    import Home from "./Home"
    import DrivePage from "./DrivePage";
    
-
     const rootElement = document.getElementById("root");
     ReactDOM.render(
       <BrowserRouter>
        <Switch>
-        <Route exact path="/" component={Home}></Route>
+        <Route exact path="/" component={Home} id="HomePath"></Route>
         <Route exact path="/drive" component={DrivePage}></Route>
       </Switch>
       </BrowserRouter>,

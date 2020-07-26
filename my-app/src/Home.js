@@ -1,18 +1,30 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Bootstrap from 'bootstrap-4-react';
 import './Home.css';
-import { HomeButton } from './components/HomeButton'
+import { HomeButton } from './components/HomeButton';
+import { Header } from './components/homepage/Header';
+import { OnRoad } from './components/homepage/OnRoad';
+import { OnHunt  } from './components/homepage/OnHunt';
 
-class App extends Component {
+class Home extends Component {
 
   render() {
-    
     return (
-      <div className="DrivePage">
+      <div className="HomePage">
         <div className="container mrgnbtm">
           <div className="row mx-auto">
             <div className="col-md-12">
-              <HomeButton></HomeButton>
+              <Header></Header>
+            </div>
+          </div>
+        </div>
+        <div className="container">
+          <div class="row">
+            <div class="col">
+              <OnRoad></OnRoad>
+            </div>
+            <div class="col">
+              <OnHunt></OnHunt>
             </div>
           </div>
         </div>
@@ -21,4 +33,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Home;

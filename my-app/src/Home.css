@@ -1,0 +1,21 @@
+html {
+    text-align: center;
+}
+
+h1 {
+    font-size: 85px;
+    color: white;
+}
+
+h5 {
+    color: beige;
+}
+
+header {
+    margin-top: 2%;
+}
+
+#onroad {
+    width: 400px;
+    height: 400px;
+}
