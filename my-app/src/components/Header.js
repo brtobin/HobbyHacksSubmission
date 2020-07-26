@@ -2,8 +2,6 @@ import React from 'react'
 
 export const Header = () => {
     return(
-        <div className="header">
-            <h1>MusicGo</h1>
-        </div>
+        <h1 class="display-3 text-center mx-auto" id="page-title">Drive Page</h1>
     )
 }
