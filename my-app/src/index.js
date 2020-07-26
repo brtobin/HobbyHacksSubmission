@@ -12,7 +12,9 @@ import React from "react";
        <Switch>
         <Route exact path="/" component={Home} id="HomePath"></Route>
         <Route exact path="/drive" component={DrivePage}></Route>
-        <Route exact path="/hunt" component={HuntPage}></Route>
+        <Route exact={true} path="/hunt/:token" render={(props) => 
+        <HuntPage token={props.match.params.token}/>
+        } />
       </Switch>
       </BrowserRouter>,
       rootElement

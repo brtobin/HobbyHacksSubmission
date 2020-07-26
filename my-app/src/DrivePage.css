@@ -118,3 +118,8 @@ body {
 .col-sm-2 .pick-genre {
   padding: 20px;
 }
+
+.song {
+  font-size: 24px;
+  color: white;
+}

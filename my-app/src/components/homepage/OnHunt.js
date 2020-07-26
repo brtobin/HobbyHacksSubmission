@@ -5,10 +5,7 @@ export const OnHunt = props => {
     return(
         <div>
             <Link to={{
-                pathname: './hunt',
-                state: {
-                    token: props.token
-                }
+                pathname: './hunt/' + props.token,
             }}>
                 <button type="button" class="btn btn-success" >On the Hunt</button>
             </Link>
