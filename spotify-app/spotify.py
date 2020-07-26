@@ -59,7 +59,7 @@ def home_page():
     #     current_playing['song'] = current_song_result['name']
     #     current_playing['image'] = current_song_result['album']['images'][0]['url']
     #     current_playing['artist'] = current_song_result['artists'][0]['name']
-    return render_template('home.html', tracks=saved_tracks_list, single_track=one_track)
+    return render_template('home.html', tracks=saved_tracks_list)
 
 # Add one of your top songs to the back of your queue
 @bp.route('/add_to_queue/<track_id>', methods=['POST'])
