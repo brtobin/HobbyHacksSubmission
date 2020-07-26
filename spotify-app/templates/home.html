@@ -9,24 +9,26 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="text-white">On the Road</h2>
-                <img width=400px height= 400px src="{{current_playing.image}}">
-                <h4 class="text-white">
-                    <b>{{current_playing.song}}</b> - {{current_playing.artist}}
-                </h4>
+                <h2 class="text-white">On the Road?</h2>
+                <img width=400px height= 400px src="{{tracks[0].album_image}}">
+                <h5 class="text-white">
+                    <!-- <b>{{tracks[0].track_name}}</b> - {{tracks[0].artist_name}} -->
+                    <button>get a curated playlist</button>
+                </h5>
             </div>
 
             <div class="col">
-                <h2 class="text-white">On the Hunt</h2>
-                <img width=400px height= 400px src="{{current_playing.image}}">
-                <h4 class="text-white">
-                    <b>{{current_playing.song}}</b> - {{current_playing.artist}}
-                </h4>
+                <h2 class="text-white">On the Hunt?</h2>
+                <img width=400px height= 400px src="{{tracks[1].album_image}}">
+                <h5 class="text-white">
+                    <!-- <b>{{tracks[1].track_name}}</b> - {{tracks[1].artist_name}} -->
+                    <button>discover and share music</button>
+                </h5>
             </div>
             <!-- <div class="col-6" style="overflow-y: scroll; height: 100vh;">
-                <h2 class="text-white">Your Top 20 Tracks</h2>
+                <h2 class="text-white">Recently Saved</h2>
                 <div class="row mt-3">
-                    {% for track in top_tracks %}
+                    {% for track in tracks %}
                     <div class="col-6 mt-5">
                         <img width=200px height= 200px src="{{track.album_image}}">
                     </div>

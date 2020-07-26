@@ -38,27 +38,28 @@ def set_token():
 def home_page():
     access_token = session['access_token']
     sp_api = spotipy.Spotify(access_token)
-    top_tracks_result = sp_api.current_user_top_tracks()
+    saved_tracks_result = sp_api.current_user_saved_tracks()
     
-    all_top_tracks = []
-    for t in top_tracks_result['items']:
-        top_track = {}
-        top_track['artist_name'] = t['artists'][0]['name']
-        top_track['track_name'] = t['name']
-        top_track['album_name'] = t['album']['name']
-        top_track['album_image'] = t['album']['images'][0]['url']
-        top_track['track_id'] = t['id']
-        all_top_tracks.append(top_track)
+    saved_tracks_list = []
+    for t in saved_tracks_result['items']:
+        saved_track = {}
+        saved_track['artist_name'] = t['track']['artists'][0]['name']
+        saved_track['track_name'] = t['track']['name']
+        saved_track['album_name'] = t['track']['album']['name']
+        saved_track['album_image'] = t['track']['album']['images'][0]['url']
+        saved_track['track_id'] = t['track']['id']
+        saved_tracks_list.append(saved_track)
+        one_track = saved_track
 
-    current_playing = {}
-    result = sp_api.current_user_playing_track()
-    if result:
-        current_song_result = result['item']
-        current_playing['song'] = current_song_result['name']
-        current_playing['image'] = current_song_result['album']['images'][0]['url']
-        current_playing['artist'] = current_song_result['artists'][0]['name']
-    return render_template('home.html', top_tracks=all_top_tracks, 
-    current_playing=current_playing)
+    print(one_track)
+    # current_playing = {}
+    # result = sp_api.current_user_playing_track()
+    # if result:
+    #     current_song_result = result['item']
+    #     current_playing['song'] = current_song_result['name']
+    #     current_playing['image'] = current_song_result['album']['images'][0]['url']
+    #     current_playing['artist'] = current_song_result['artists'][0]['name']
+    return render_template('home.html', tracks=saved_tracks_list, single_track=one_track)
 
 # Add one of your top songs to the back of your queue
 @bp.route('/add_to_queue/<track_id>', methods=['POST'])
