@@ -10,6 +10,7 @@ import { OnRoad } from './components/homepage/OnRoad';
 import { OnHunt  } from './components/homepage/OnHunt';
 
 class Home extends Component {
+
   constructor() {
     super();
     this.state = {
@@ -125,6 +126,7 @@ class Home extends Component {
             {this.state.token && !this.state.no_data && (
                 <OnHunt
                   item={this.state.item}
+                  token={this.state.token}
                 />
               )}
               {!this.state.token && (<div></div>)}
