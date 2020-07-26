@@ -7,6 +7,7 @@ import { Map } from './components/Map';
 import { FindHotspots } from './components/FindHotspots';
 import { Form } from './components/Form'
 import { CheckIn } from './components/CheckIn';
+import { Other } from './components/Other';
 
 class App extends Component {
 
@@ -14,13 +15,13 @@ class App extends Component {
     
     return (
       <div className="DrivePage">
-        <div className="container mrgnbtm">
-          <div className="row mx-auto">
+        <div className="container-fluid">
+          <div className="row">
             <div className="col-md-12">
               <Header></Header>
             </div>
           </div>
-          <div className="row">
+          <div className="row" id="driveButtons">
             <Form></Form>
           </div>
         </div>
