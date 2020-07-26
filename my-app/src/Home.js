@@ -4,7 +4,7 @@ import './Home.css';
 import { HomeButton } from './components/HomeButton';
 import { Header } from './components/homepage/Header';
 import { OnRoad } from './components/homepage/OnRoad';
-import { OnHunt  } from './components/homepage/OnHunt';
+import { OnHunt  } from './components/homepage/OnHunt'
 
 class Home extends Component {
 
@@ -25,6 +25,12 @@ class Home extends Component {
             </div>
             <div class="col">
               <OnHunt></OnHunt>
+            </div>
+          </div>
+          <div class="row">
+            <div id="login">
+              <h1>First, log in to spotify</h1>
+              <a href="/login">Log in</a>
             </div>
           </div>
         </div>

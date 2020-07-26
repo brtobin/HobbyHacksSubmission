@@ -1,13 +1,4 @@
-import React from "react";
-   import ReactDOM from "react-dom";
-   import { BrowserRouter, Route, Switch } from "react-router-dom";
-   import { SpotifyApiContext } from 'react-spotify-api';
-
-   import Home from "./Home"
-   import DrivePage from "./DrivePage";
-   
-    const rootElement = document.getElementById("root");
-    /**
+/**
  * This is an example of a basic node.js script that performs
  * the Authorization Code oAuth2 flow to authenticate against
  * the Spotify Accounts.
@@ -134,13 +125,4 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 console.log('Listening on 8888');
-
-    ReactDOM.render(
-        <BrowserRouter>
-        <Switch>
-          <Route exact path="/" component={Home} id="HomePath"></Route>
-          <Route exact path="/drive" component={DrivePage}></Route>
-        </Switch>
-        </BrowserRouter>,
-      rootElement
-    );
+app.listen(8888);
