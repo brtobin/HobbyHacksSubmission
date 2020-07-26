@@ -5,6 +5,7 @@ import { Map } from './components/Map';
 import { FindHotspots } from './components/FindHotspots';
 import { Form } from './components/Form'
 import { CheckIn } from './components/CheckIn';
+import {HotspotTitle} from './components/huntpage/HotspotTitle'
 import * as $ from "jquery";
 
 class HuntPage extends Component {
@@ -12,11 +13,11 @@ class HuntPage extends Component {
   constructor() {
     super();
     this.state = {
-      currentHotspot: null
+      currentHotspot: {}
     }
 
-    var grandCentralSP = {placeename: "Grand Central Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJZwW4XcmsB4gRYJF5spqwliQ"} ;
-    var wiCapitalSP = {placename: "Wisconsin Capital Share Point", placid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJ5YH4falWBogR5Lpub1B0OVA"};
+    var grandCentralSP = {placename: "Grand Central Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJZwW4XcmsB4gRYJF5spqwliQ"} ;
+    var wiCapitalSP = {placename: "Wisconsin Capital Share Point", placeid: "https://www.google.com/maps/embed/v1/place?key=AIzaSyBaNwCOB31e5gJqrksaSDU5_duK6POZhvw&q=place_id:ChIJ5YH4falWBogR5Lpub1B0OVA"};
     this.hotspots = [grandCentralSP, wiCapitalSP];
   }
 
@@ -26,14 +27,13 @@ getHotspotIndex() {
 }
 
 loadHotspot = () => {
-    console.log("HERE");
-    console.log("index: " + this.getHotspotIndex());
-    console.log("placeid: " + this.hotspots[this.getHotspotIndex()].placeid);
-    document.getElementById('mapObj').src = this.hotspots[this.getHotspotIndex()].placeid; 
-    this.setState( { currentHotspot: this.hotspots[this.getHotspotIndex()]} );
+    var index = this.getHotspotIndex();
+    document.getElementById('mapObj').src = this.hotspots[index].placeid; 
+    console.log(JSON.stringify(this.hotspots));
+    this.setState({ currentHotspot: this.hotspots[index]});
 }
-
   render() {
+    console.log("current hotspot " + JSON.stringify(this.state.currentHotspot))
     return (
       <div className="HuntPage">
         <div className="container-fluid mrgnbtm">
@@ -49,10 +49,10 @@ loadHotspot = () => {
               ></FindHotspots>
             </div>
           </div>
-          <div className="hotspot-info">
-            {(this.state.currentHotspot != null) && (
-              <h1>{this.state.currentHotspot.placeename}</h1>
-            )}
+          <div className="hotspotTitle">
+            <HotspotTitle
+              currentHotspot = {this.state.currentHotspot}
+            ></HotspotTitle>
           </div>
         </div>
       </div>     
