@@ -15,7 +15,6 @@ import { authEndpoint, clientId, redirectUri, scopes } from "./config_example";
 class App extends Component {
 
   render() {
-    
     return (
       <div className="DrivePage">
         <div className="container" id="container">

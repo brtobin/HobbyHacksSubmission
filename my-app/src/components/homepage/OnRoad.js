@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 export const OnRoad = props => {
     return(
         <div>
-            <Link to="./drive">
+            <Link to={{
+                pathname: './drive/' + props.token,
+            }}>
                 <button type="button" class="btn btn-success" >On the Road</button>
             </Link>
             <img class="snapshot" src={props.item}/>
@@ -13,5 +15,6 @@ export const OnRoad = props => {
         </div>   
     )
 }
+
 
 
